@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charest="UTF-8">
+        <title>CKeditor a POST</title>
+        <script src="ckeditor/ckeditor.js"></script>
+        <style>
+            .editor_wrapper{
+                width: 75%;
+                margin: auto;
+                padding-top: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="editor_wrapper">
+            <form action="https://www.fotime.zcu.cz/post_data.php" method="POST">
+                <textarea name="editor" id="editor1">                    
+                </textarea>    
+                <input type="submit" name="save" value="Odešli">
+            </form>                
+        </div>            
+        <script>
+                CKEDITOR.replace('editor');
+        </script>
+    </body>
+</html>
