@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ukázka JSchart</title>
+        <script src="chart.js"></script>
+        <style>
+            .chart_wrapper{
+                width:800px; height:600px !important; margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="chart_wrapper">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const color = 'rgba(40, 167, 69, 0.5)';
+        const border = 'rgba(40, 167, 69, 1)';
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Petr Breit', 'Matěj Brzica', 'Sára Kolorosová', 'Mgr. Pavel Moc', 'Bc. Marek Osvald', 'Nicelo Seidlová', 'Tomáš Štěpánek', 'Michal Švec', 'Tereza Tomanová', 'Br. Viola Vrbová', 'Tomáš Zelinka'],
+                datasets: [{
+                    label: 'Počet hlasů',
+                    data: [22, 24, 84, 41, 19, 24, 42, 39, 34, 37, 21],
+                    backgroundColor: [
+                        color
+                    ],
+                    borderColor: [
+                        border
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+    </body>
+</html>

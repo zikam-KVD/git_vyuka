@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ukázka JSchart</title>
+        <script src="chart.js"></script>
+        <style>
+            .chart_wrapper{
+                width:1000px; height:600px !important; margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="chart_wrapper">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const color = 'rgba(40, 167, 69, 0.5)';
+        const border = 'rgba(40, 167, 69, 1)';
+        const myChart = new Chart(ctx, {
+            type: 'line',            
+            data: {                
+                labels: ['Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'],
+                datasets: [{
+                    label: 'Vývoj stresu v plánování ISVK', 
+                    data: [30, 65, 59, 80, 150],
+                    fill: false,
+                    borderColor: 'rgb(40, 167, 69)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Vzrůst onemovnění COVID-19', 
+                    data: [20, 25, 49, 56, 80],
+                    fill: false,
+                    borderColor: 'rgb(160, 40, 40)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+    </body>
+</html>
